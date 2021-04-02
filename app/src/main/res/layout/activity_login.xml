@@ -61,8 +61,8 @@
         android:layout_marginRight="25dp"
         android:paddingLeft="20dp"
         android:textSize="16sp"
-        android:textColor="#000000"
-        android:textColorHint="#000000"
+        android:textColor="#66000000"
+        android:textColorHint="#66000000"
         android:background="@drawable/edittext_custom"
         android:fontFamily="@font/thin"
         android:hint="이름을 입력해주세요."
@@ -87,8 +87,8 @@
         android:hint="비밀번호를 입력해주세요."
         android:inputType="textPersonName"
         android:paddingLeft="20dp"
-        android:textColor="#000000"
-        android:textColorHint="#000000"
+        android:textColor="#66000000"
+        android:textColorHint="#66000000"
         android:textSize="16sp" />
 
     <Button
@@ -110,6 +110,51 @@
         android:background="@drawable/button_custom"
         android:textSize="20sp"
         android:text="로그인" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/login_btn"
+        android:layout_centerInParent="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="17dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/button_sub_custom"
+            android:fontFamily="@font/bold"
+            android:text="회원가입"
+            android:textColor="#80000000"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|center_horizontal|center_vertical"
+            android:fontFamily="@font/bold"
+            android:gravity="center"
+            android:text="|"
+            android:textColor="#80000000"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginLeft="15dp"
+            android:background="@drawable/button_sub_custom"
+            android:fontFamily="@font/bold"
+            android:foregroundGravity="right"
+            android:text="비밀번호 찾기"
+            android:textColor="#80000000"
+            android:textSize="16sp" />
+    </LinearLayout>
 
 
 </RelativeLayout>
