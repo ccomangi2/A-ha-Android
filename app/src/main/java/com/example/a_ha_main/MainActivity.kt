@@ -6,10 +6,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MotionEvent
 import android.view.View
-import android.widget.Button
-import android.widget.ImageButton
-import android.widget.LinearLayout
-import android.widget.RelativeLayout
+import android.widget.*
+import org.w3c.dom.Text
 
 class MainActivity : AppCompatActivity() {
     @SuppressLint("ClickableViewAccessibility")
@@ -25,6 +23,7 @@ class MainActivity : AppCompatActivity() {
         var mypage_Button = findViewById(R.id.mypage_Button) as ImageButton // 마이페이지 버튼
         var logout_btn = findViewById(R.id.logout_btn) as Button // 로그아웃 버튼
         var out_btn = findViewById(R.id.out_btn) as Button // 회원탈퇴 버튼
+        var name = findViewById(R.id.name) as TextView // 이름
         var add_btn = findViewById(R.id.add_btn) as ImageButton // 메모 작성 버튼
 
         menu_btn.setOnClickListener {

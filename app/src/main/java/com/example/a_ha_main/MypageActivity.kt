@@ -20,6 +20,7 @@ class MypageActivity : AppCompatActivity() {
         var mypage_Button = findViewById(R.id.mypage_Button) as ImageButton // 마이페이지 버튼
         var logout_btn = findViewById(R.id.logout_btn) as Button // 로그아웃 버튼
         var out_btn = findViewById(R.id.out_btn) as Button // 회원탈퇴 버튼
+        var name = findViewById(R.id.name) as TextView // 이름
 
         var proflie_setting_btn = findViewById(R.id.proflie_setting_btn) as Button // 프로필 사진 변경 버튼
         var proflie = findViewById(R.id.proflie) as ImageView // 프로필 사진

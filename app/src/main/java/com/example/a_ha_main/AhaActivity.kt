@@ -7,6 +7,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.RelativeLayout
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
 class AhaActivity : AppCompatActivity() {
@@ -22,6 +23,7 @@ class AhaActivity : AppCompatActivity() {
         var mypage_Button = findViewById(R.id.mypage_Button) as ImageButton // 마이페이지 버튼
         var logout_btn = findViewById(R.id.logout_btn) as Button // 로그아웃 버튼
         var out_btn = findViewById(R.id.out_btn) as Button // 회원탈퇴 버튼
+        var name = findViewById(R.id.name) as TextView // 이름
 
         menu_btn.setOnClickListener {
             if (menu_view.visibility == View.GONE) {
