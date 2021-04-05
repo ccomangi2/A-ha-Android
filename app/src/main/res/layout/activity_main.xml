@@ -72,4 +72,18 @@
         android:layout_height="match_parent"
         android:layout_below="@+id/textView10" />
 
+    <ImageButton
+        android:id="@+id/add_btn"
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="15dp"
+        android:layout_marginRight="15dp"
+        android:adjustViewBounds="true"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/add" />
+
 </RelativeLayout>
