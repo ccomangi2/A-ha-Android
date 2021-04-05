@@ -25,6 +25,7 @@ class MainActivity : AppCompatActivity() {
         var mypage_Button = findViewById(R.id.mypage_Button) as ImageButton // 마이페이지 버튼
         var logout_btn = findViewById(R.id.logout_btn) as Button // 로그아웃 버튼
         var out_btn = findViewById(R.id.out_btn) as Button // 회원탈퇴 버튼
+        var add_btn = findViewById(R.id.add_btn) as ImageButton // 메모 작성 버튼
 
         menu_btn.setOnClickListener {
             if (menu_view.visibility == View.GONE) {
@@ -60,6 +61,10 @@ class MainActivity : AppCompatActivity() {
         }
         out_btn.setOnClickListener() {
             val nextIntent = Intent(this, LoginActivity::class.java)
+            startActivity(nextIntent)
+        }
+        add_btn.setOnClickListener() {
+            val nextIntent = Intent(this, MemoWriteActivity::class.java)
             startActivity(nextIntent)
         }
     }
