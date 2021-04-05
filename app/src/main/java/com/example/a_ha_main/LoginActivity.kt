@@ -10,5 +10,11 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
+        var join_btn = findViewById(R.id.join_btn) as Button // 회원가입 버튼
+
+        join_btn.setOnClickListener() {
+            val nextIntent = Intent(this, JoinActivity::class.java)
+            startActivity(nextIntent)
+        }
     }
 }

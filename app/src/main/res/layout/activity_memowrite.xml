@@ -23,7 +23,7 @@
         android:textColor="#000000" />
 
     <ImageButton
-        android:id="@+id/menu_btn"
+        android:id="@+id/cancle_btn"
         android:layout_width="25dp"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/textView4"
