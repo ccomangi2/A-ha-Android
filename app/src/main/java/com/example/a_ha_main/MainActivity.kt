@@ -48,7 +48,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(nextIntent)
         }
         chat_Button.setOnClickListener() {
-            val nextIntent = Intent(this, JoinActivity::class.java) // 수정 필요
+            val nextIntent = Intent(this, AhaActivity::class.java)
             startActivity(nextIntent)
         }
         mypage_Button.setOnClickListener() {
