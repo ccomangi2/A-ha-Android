@@ -22,6 +22,7 @@
         <activity android:name=".LoginActivity" />
         <activity android:name=".JoinActivity" />
         <activity android:name=".MemoWriteActivity" />
+        <activity android:name=".MypageActivity" />
     </application>
 
 </manifest>
