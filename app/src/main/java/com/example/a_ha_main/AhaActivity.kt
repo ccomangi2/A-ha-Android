@@ -24,6 +24,9 @@ class AhaActivity : AppCompatActivity() {
         var logout_btn = findViewById(R.id.logout_btn) as Button // 로그아웃 버튼
         var out_btn = findViewById(R.id.out_btn) as Button // 회원탈퇴 버튼
         var name = findViewById(R.id.name) as TextView // 이름
+        
+        var search_btn = findViewById(R.id.search_btn) as ImageButton // 검색 버튼
+        var list_btn = findViewById(R.id.list_btn) as ImageButton // 점 세개
 
         menu_btn.setOnClickListener {
             if (menu_view.visibility == View.GONE) {
