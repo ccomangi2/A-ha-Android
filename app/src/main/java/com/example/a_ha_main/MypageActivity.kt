@@ -27,6 +27,8 @@ class MypageActivity : AppCompatActivity() {
         var name_textview = findViewById(R.id.name_textview) as TextView // 이름
         var id_textview = findViewById(R.id.id_textview) as TextView // 아이디
         var email_textview = findViewById(R.id.email_textview) as TextView // 이메일
+        var main_logout_btn = findViewById(R.id.main_logout_btn) as Button // 로그아웃 버튼
+        var main_out_btn = findViewById(R.id.main_out_btn) as Button // 회원탈퇴 버튼
 
         menu_btn.setOnClickListener {
             if (menu_view.visibility == View.GONE) {
