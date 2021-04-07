@@ -71,7 +71,8 @@
         android:id="@+id/memo_recyclerview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/textView10" />
+        android:layout_below="@+id/textView10"
+        tools:listitem="@layout/memo_list"/>
 
     <ImageButton
         android:id="@+id/add_btn"

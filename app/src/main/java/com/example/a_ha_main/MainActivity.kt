@@ -15,6 +15,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        var MemoList = arrayListOf<Memo_list>()
+
         var menu_btn = findViewById(R.id.menu_btn) as ImageButton // 메뉴
         var menu_view = findViewById(R.id.menu_view) as RelativeLayout // 메뉴 네비게이션
         var background_view = findViewById(R.id.background_view) as View // 메뉴 네비게이션 배경
