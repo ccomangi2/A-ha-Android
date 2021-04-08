@@ -2,31 +2,31 @@ package com.example.a_ha_main
 
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MotionEvent
 import android.view.View
-import android.widget.*
-import org.w3c.dom.Text
+import androidx.annotation.RequiresApi
+import androidx.recyclerview.widget.LinearLayoutManager
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
-    @SuppressLint("ClickableViewAccessibility")
+    @SuppressLint("UseCompatLoadingForDrawables", "ClickableViewAccessibility")
+    @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        var MemoList = arrayListOf<Memo_list>()
+        var MemoList = ArrayList<Memo_list>()
+        MemoList.add(Memo_list("제목1", "내용1", "날짜", null))
+        MemoList.add(Memo_list("제목1", "내용1", "날짜", getDrawable(R.drawable.icon_memo_p)!!))
+        MemoList.add(Memo_list("제목1", "내용1", "날짜", null))
+        MemoList.add(Memo_list("제목1", "내용1", "날짜", null))
+        MemoList.add(Memo_list("제목1", "내용1", "날짜", null))
 
-        var menu_btn = findViewById(R.id.menu_btn) as ImageButton // 메뉴
-        var menu_view = findViewById(R.id.menu_view) as RelativeLayout // 메뉴 네비게이션
-        var background_view = findViewById(R.id.background_view) as View // 메뉴 네비게이션 배경
-        var memo_btn = findViewById(R.id.memo_btn) as ImageButton // 메모 작성 버튼
-        var chat_Button = findViewById(R.id.chat_Button) as ImageButton // 채팅 버튼
-        var mypage_Button = findViewById(R.id.mypage_Button) as ImageButton // 마이페이지 버튼
-        var logout_btn = findViewById(R.id.logout_btn) as Button // 로그아웃 버튼
-        var out_btn = findViewById(R.id.out_btn) as Button // 회원탈퇴 버튼
-        var name = findViewById(R.id.name) as TextView // 이름
-        var add_btn = findViewById(R.id.add_btn) as ImageButton // 메모 작성 버튼
+        val adapter = MemoAdapter(MemoList)
+        memo_recyclerview.adapter = adapter
 
         menu_btn.setOnClickListener {
             if (menu_view.visibility == View.GONE) {

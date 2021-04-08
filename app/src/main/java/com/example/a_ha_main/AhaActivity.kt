@@ -9,24 +9,12 @@ import android.widget.ImageButton
 import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import kotlinx.android.synthetic.main.activity_main.*
 
 class AhaActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_aha)
-
-        var menu_btn = findViewById(R.id.menu_btn) as ImageButton // 메뉴
-        var menu_view = findViewById(R.id.menu_view) as RelativeLayout // 메뉴 네비게이션
-        var background_view = findViewById(R.id.background_view) as View // 메뉴 네비게이션 배경
-        var memo_btn = findViewById(R.id.memo_btn) as ImageButton // 메모 작성 버튼
-        var chat_Button = findViewById(R.id.chat_Button) as ImageButton // 채팅 버튼
-        var mypage_Button = findViewById(R.id.mypage_Button) as ImageButton // 마이페이지 버튼
-        var logout_btn = findViewById(R.id.logout_btn) as Button // 로그아웃 버튼
-        var out_btn = findViewById(R.id.out_btn) as Button // 회원탈퇴 버튼
-        var name = findViewById(R.id.name) as TextView // 이름
-        
-        var search_btn = findViewById(R.id.search_btn) as ImageButton // 검색 버튼
-        var list_btn = findViewById(R.id.list_btn) as ImageButton // 점 세개
 
         menu_btn.setOnClickListener {
             if (menu_view.visibility == View.GONE) {
