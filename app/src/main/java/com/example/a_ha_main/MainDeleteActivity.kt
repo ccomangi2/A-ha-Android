@@ -17,7 +17,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_main.*
 import java.nio.file.Files.delete
 
-class MainActivity : AppCompatActivity() {
+class MainDeleteActivity : AppCompatActivity() {
     @SuppressLint("UseCompatLoadingForDrawables", "ClickableViewAccessibility")
     @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
 
@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_main_delete)
 
         val mAdapter = MemoAdapter(this, MemoList)
         memo_recyclerview.adapter = mAdapter
@@ -79,22 +79,6 @@ class MainActivity : AppCompatActivity() {
         add_btn.setOnClickListener() {
             val nextIntent = Intent(this, MemoWriteActivity::class.java)
             startActivity(nextIntent)
-        }
-        list_btn.setOnClickListener() {
-            var popup = PopupMenu(this, list_btn)
-            menuInflater.inflate(R.menu.option_menu, popup.menu)
-
-            popup.setOnMenuItemClickListener { item ->
-                when (item.itemId) {
-                    R.id.modify ->
-                        startActivity(Intent(this, MainModifyActivity::class.java).addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION))
-
-                    R.id.delete ->
-                        startActivity(Intent(this, MainDeleteActivity::class.java).addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION))
-                }
-                false
-            }
-            popup.show()
         }
     }
     override fun onBackPressed() {}

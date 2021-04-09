@@ -1,6 +1,7 @@
 package com.example.a_ha_main
 
 import android.content.Context
+import android.content.Intent
 import android.system.Os.bind
 import android.view.LayoutInflater
 import android.view.View
@@ -43,6 +44,13 @@ class MemoAdapter(val context: Context, val memoList: ArrayList<Memo_list>) : Re
             memoTitle?.text = memo.title
             memoArea?.text = memo.area
             memoDate?.text = memo.date
+
+            itemView.setOnClickListener {
+                Intent(context, MemoActivity::class.java).apply {
+                    //putExtra("data", item)
+                    addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                }.run { context.startActivity(this) }
+            }
         }
     }
 }

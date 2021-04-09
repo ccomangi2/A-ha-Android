@@ -66,7 +66,7 @@ class MemoWriteActivity : AppCompatActivity() {
         }
     }
     fun toastMassage(text: String) {
-        var t1 = Toast.makeText(this, text, Toast.LENGTH_SHORT)
+        var t1 = Toast.makeText(this, text, Toast.LENGTH_LONG)
         t1.show()
     }
 }

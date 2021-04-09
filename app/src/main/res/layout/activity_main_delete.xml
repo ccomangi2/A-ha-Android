@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8F8F8"
+    tools:context=".MainActivity">
+
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="100dp"
+        android:layout_height="65dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:gravity="center|center_horizontal"
+        android:textSize="22sp"
+        android:fontFamily="@font/regular"
+        android:background="@drawable/toolbar_custom"
+        android:text="메모"
+        android:textColor="#000000" />
+
+    <ImageButton
+        android:id="@+id/menu_btn"
+        android:layout_width="25dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textView4"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="20dp"
+        android:adjustViewBounds="true"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/button_drawer" />
+
+    <ImageButton
+        android:id="@+id/list_btn"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textView4"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:adjustViewBounds="true"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/delete" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView4"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="20dp"
+        android:fontFamily="@font/regular"
+        android:textSize="16sp"
+        android:textColor="#8F000000"
+        android:text="최근 수정순" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/memo_recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/textView10"
+        tools:listitem="@layout/memo_delete_list"/>
+
+    <ImageButton
+        android:id="@+id/add_btn"
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="15dp"
+        android:layout_marginRight="15dp"
+        android:adjustViewBounds="true"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/add" />
+
+    <RelativeLayout
+        android:id="@+id/menu_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginLeft="0dp"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:layout_width="320dp"
+                android:layout_height="match_parent"
+                android:background="#FFFFFF">
+
+                <TextView
+                    android:id="@+id/name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="50dp"
+                    android:fontFamily="@font/medium"
+                    android:text="김아하"
+                    android:textColor="#F35C5C"
+                    android:textSize="40sp" />
+
+                <TextView
+                    android:id="@+id/textView15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="50dp"
+                    android:layout_toEndOf="@+id/name"
+                    android:layout_toRightOf="@+id/name"
+                    android:fontFamily="@font/medium"
+                    android:text="님,"
+                    android:textColor="#000000"
+                    android:textSize="40sp" />
+
+                <TextView
+                    android:id="@+id/textView16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/name"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="20dp"
+                    android:fontFamily="@font/medium"
+                    android:text="반가워요."
+                    android:textColor="#000000"
+                    android:textSize="40sp" />
+
+                <TextView
+                    android:id="@+id/textView17"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView16"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/regular"
+                    android:text="오늘도 함께 아이디어를 만들어봐요."
+                    android:textColor="#8F000000"
+                    android:textSize="15sp" />
+
+                <ImageButton
+                    android:id="@+id/memo_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView17"
+                    android:layout_marginTop="20dp"
+                    android:adjustViewBounds="true"
+                    android:background="@android:color/transparent"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/button_menu_memo" />
+
+                <ImageButton
+                    android:id="@+id/chat_Button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/memo_btn"
+                    android:adjustViewBounds="true"
+                    android:background="@drawable/edit_custom"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/button_menu_ahabot" />
+
+                <ImageButton
+                    android:id="@+id/mypage_Button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/chat_Button"
+                    android:adjustViewBounds="true"
+                    android:background="@drawable/edit_custom"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/button_menu_mypage" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="60dp"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/logout_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:background="@drawable/button_sub_custom"
+                        android:fontFamily="@font/medium"
+                        android:text="로그아웃"
+                        android:textColor="#80000000"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/textView3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center|center_horizontal|center_vertical"
+                        android:fontFamily="@font/medium"
+                        android:gravity="center"
+                        android:text="|"
+                        android:textColor="#4D000000"
+                        android:textSize="12sp" />
+
+                    <Button
+                        android:id="@+id/out_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:background="@drawable/button_sub_custom"
+                        android:fontFamily="@font/medium"
+                        android:foregroundGravity="right"
+                        android:text="회원탈퇴"
+                        android:textColor="#80000000"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+            </RelativeLayout>
+            <View
+                android:id="@+id/background_view"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:background="#8F000000" />
+        </LinearLayout>
+
+    </RelativeLayout>
+</RelativeLayout>

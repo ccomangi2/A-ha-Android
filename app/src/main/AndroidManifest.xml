@@ -24,6 +24,9 @@
         <activity android:name=".MemoWriteActivity" />
         <activity android:name=".MypageActivity" />
         <activity android:name=".AhaActivity" />
+        <activity android:name=".MemoActivity" />
+        <activity android:name=".MainDeleteActivity" />
+        <activity android:name=".MainModifyActivity" />
     </application>
 
 </manifest>
