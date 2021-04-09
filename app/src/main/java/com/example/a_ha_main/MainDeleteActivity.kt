@@ -1,20 +1,33 @@
 package com.example.a_ha_main
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Layout
-import android.view.Menu
-import android.view.MenuItem
-import android.view.MotionEvent
-import android.view.View
+import android.view.*
+import android.widget.ImageButton
 import android.widget.LinearLayout
 import android.widget.PopupMenu
+import android.widget.TextView
 import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_main.add_btn
+import kotlinx.android.synthetic.main.activity_main.background_view
+import kotlinx.android.synthetic.main.activity_main.chat_Button
+import kotlinx.android.synthetic.main.activity_main.logout_btn
+import kotlinx.android.synthetic.main.activity_main.memo_btn
+import kotlinx.android.synthetic.main.activity_main.memo_recyclerview
+import kotlinx.android.synthetic.main.activity_main.menu_btn
+import kotlinx.android.synthetic.main.activity_main.menu_view
+import kotlinx.android.synthetic.main.activity_main.mypage_Button
+import kotlinx.android.synthetic.main.activity_main.out_btn
+import kotlinx.android.synthetic.main.activity_main_delete.*
+import kotlinx.android.synthetic.main.alert_popup.*
 import java.nio.file.Files.delete
 
 class MainDeleteActivity : AppCompatActivity() {
@@ -29,6 +42,7 @@ class MainDeleteActivity : AppCompatActivity() {
             Memo_list("제목1", "내용1", "날짜", "icon_memo_text")
     )
 
+    @SuppressLint("ClickableViewAccessibility")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_delete)
@@ -80,6 +94,29 @@ class MainDeleteActivity : AppCompatActivity() {
             val nextIntent = Intent(this, MemoWriteActivity::class.java)
             startActivity(nextIntent)
         }
+        delete_btn.setOnClickListener() {
+            showdeletePopup()
+        }
+    }
+    private fun showdeletePopup() {
+        val inflater = getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+        val view = inflater.inflate(R.layout.alert_popup, null)
+        val tv: TextView = view.findViewById(R.id.tv)
+        tv.text = "선택한 메모를 삭제하시겠습니까?"
+
+        val alertDialog = AlertDialog.Builder(this, R.style.MyDialogTheme)
+                .setTitle("메모 삭제")
+                .create()
+        val cencle: ImageButton = view.findViewById(R.id.cencle)
+        cencle.setOnClickListener() {
+            alertDialog.dismiss()
+        }
+        val ok: ImageButton = view.findViewById(R.id.ok)
+        ok.setOnClickListener() {
+            alertDialog.dismiss()
+        }
+        alertDialog.setView(view)
+        alertDialog.show()
     }
     override fun onBackPressed() {}
 }
