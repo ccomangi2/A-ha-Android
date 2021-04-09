@@ -1,41 +1,48 @@
 package com.example.a_ha_main
 
+import android.content.Context
 import android.system.Os.bind
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.memo_list.view.*
 
-class MemoAdapter(private val items: ArrayList<Memo_list>) : RecyclerView.Adapter<MemoAdapter.ViewHolder>() {
-
-    override fun getItemCount(): Int = items.size
-
-    override fun onBindViewHolder(holder: MemoAdapter.ViewHolder, position: Int) {
-        val item = items[position]
-        val listener = View.OnClickListener { it ->
-            Toast.makeText(it.context, "Clicked:" + item, Toast.LENGTH_LONG).show()
-        }
-        holder.apply {
-            bind(listener, item)
-            itemView.tag = item
-        }
+class MemoAdapter(val context: Context, val memoList: ArrayList<Memo_list>) : RecyclerView.Adapter<MemoAdapter.Holder>() {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
+        val view = LayoutInflater.from(context).inflate(R.layout.memo_list, parent, false)
+        return Holder(view)
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MemoAdapter.ViewHolder {
-        val inflatedView = LayoutInflater.from(parent.context).inflate(R.layout.memo_list, parent, false)
-        return MemoAdapter.ViewHolder(inflatedView)
+    override fun getItemCount(): Int {
+        return memoList.size
     }
 
-    class ViewHolder(v: View) : RecyclerView.ViewHolder(v) {
-        private var view: View = v
-        fun bind(listener: View.OnClickListener, item: Memo_list) {
-            view.memo_img.setImageDrawable(item.photo)
-            view.title.text = item.title
-            view.area.text = item.area
-            view.date.text = item.date
-        }
+    override fun onBindViewHolder(holder: Holder, position: Int) {
+        holder?.bind(memoList[position], context)
+    }
 
+    inner class Holder(itemView: View?) : RecyclerView.ViewHolder(itemView!!) {
+        val memoPhoto = itemView?.findViewById<ImageView>(R.id.memo_img)
+        val memoTitle = itemView?.findViewById<TextView>(R.id.title)
+        val memoArea = itemView?.findViewById<TextView>(R.id.area)
+        val memoDate = itemView?.findViewById<TextView>(R.id.date)
+
+        fun bind (memo: Memo_list, context: Context) {
+            /* memoPhoto setImageResource에 들어갈 이미지의 id를 파일명(String)으로 찾고,
+          이미지가 없는 경우 안드로이드 기본 아이콘을 표시한다.*/
+            if (memo.photo != "") {
+                val resourceId = context.resources.getIdentifier(memo.photo, "drawable", context.packageName)
+                memoPhoto?.setImageResource(resourceId)
+            } else {
+                memoPhoto?.setImageResource(R.mipmap.ic_launcher)
+            }
+            memoTitle?.text = memo.title
+            memoArea?.text = memo.area
+            memoDate?.text = memo.date
+        }
     }
 }

@@ -14,19 +14,25 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : AppCompatActivity() {
     @SuppressLint("UseCompatLoadingForDrawables", "ClickableViewAccessibility")
     @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
+
+    var MemoList = arrayListOf<Memo_list>(
+            Memo_list("제목1", "내용1", "날짜", "icon_memo_text"),
+            Memo_list("제목1", "내용1", "날짜", "icon_memo_p"),
+            Memo_list("제목1", "내용1", "날짜", "icon_memo_text"),
+            Memo_list("제목1", "내용1", "날짜", "icon_memo_text"),
+            Memo_list("제목1", "내용1", "날짜", "icon_memo_text")
+    )
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        var MemoList = ArrayList<Memo_list>()
-        MemoList.add(Memo_list("제목1", "내용1", "날짜", null))
-        MemoList.add(Memo_list("제목1", "내용1", "날짜", getDrawable(R.drawable.icon_memo_p)!!))
-        MemoList.add(Memo_list("제목1", "내용1", "날짜", null))
-        MemoList.add(Memo_list("제목1", "내용1", "날짜", null))
-        MemoList.add(Memo_list("제목1", "내용1", "날짜", null))
+        val mAdapter = MemoAdapter(this, MemoList)
+        memo_recyclerview.adapter = mAdapter
 
-        val adapter = MemoAdapter(MemoList)
-        memo_recyclerview.adapter = adapter
+        val lm = LinearLayoutManager(this)
+        memo_recyclerview.layoutManager = lm
+        memo_recyclerview.setHasFixedSize(true)
 
         menu_btn.setOnClickListener {
             if (menu_view.visibility == View.GONE) {
