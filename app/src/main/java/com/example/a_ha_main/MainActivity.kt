@@ -26,6 +26,14 @@ class MainActivity : AppCompatActivity() {
             Memo_list("제목1", "내용1", "날짜", "icon_memo_p"),
             Memo_list("제목1", "내용1", "날짜", "icon_memo_text"),
             Memo_list("제목1", "내용1", "날짜", "icon_memo_text"),
+            Memo_list("제목1", "내용1", "날짜", "icon_memo_text"),
+            Memo_list("제목1", "내용1", "날짜", "icon_memo_text"),
+            Memo_list("제목1", "내용1", "날짜", "icon_memo_text"),
+            Memo_list("제목1", "내용1", "날짜", "icon_memo_text"),
+            Memo_list("제목1", "내용1", "날짜", "icon_memo_text"),
+            Memo_list("제목1", "내용1", "날짜", "icon_memo_text"),
+            Memo_list("제목1", "내용1", "날짜", "icon_memo_text"),
+            Memo_list("제목1", "내용1", "날짜", "icon_memo_text"),
             Memo_list("제목1", "내용1", "날짜", "icon_memo_text")
     )
 
