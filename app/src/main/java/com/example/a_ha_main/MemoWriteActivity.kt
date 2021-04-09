@@ -8,6 +8,7 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.widget.EditText
 import android.widget.ImageButton
+import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_memowrite.*
@@ -19,6 +20,8 @@ class MemoWriteActivity : AppCompatActivity() {
 
         memo_edit.addTextChangedListener(textWatcher)
         memo_title_edit.addTextChangedListener(textWatcher)
+
+
 
         cancle_btn.setOnClickListener() {
             val nextIntent = Intent(this, MainActivity::class.java) // 수정 필요
@@ -32,8 +35,14 @@ class MemoWriteActivity : AppCompatActivity() {
             //입력이 끝날 때
             if(memo_title_edit.length() == 0 || memo_edit.length() == 0) {
                 ok_btn.setImageResource(R.drawable.button_check_off)
+                ok_btn.setOnClickListener() {
+                    toastMassage("메모를 작성해 주세요.")
+                }
             } else {
                 ok_btn.setImageResource(R.drawable.button_check)
+                ok_btn.setOnClickListener() {
+                    toastMassage("메모 저장!")
+                }
             }
         }
         override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
@@ -45,9 +54,19 @@ class MemoWriteActivity : AppCompatActivity() {
             //타이핑 되는 텍스트에 변화가 있을 때
             if(memo_title_edit.length() == 0 || memo_edit.length() == 0) {
                 ok_btn.setImageResource(R.drawable.button_check_off)
+                ok_btn.setOnClickListener() {
+                    toastMassage("메모를 작성해 주세요.")
+                }
             } else {
                 ok_btn.setImageResource(R.drawable.button_check)
+                ok_btn.setOnClickListener() {
+                    toastMassage("메모 저장!")
+                }
             }
         }
+    }
+    fun toastMassage(text: String) {
+        var t1 = Toast.makeText(this, text, Toast.LENGTH_SHORT)
+        t1.show()
     }
 }
