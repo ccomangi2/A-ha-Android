@@ -18,15 +18,15 @@
         </activity>
         <!--Splash Activity-->
 
-        <activity android:name=".MainActivity" />
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".JoinActivity" />
-        <activity android:name=".MemoWriteActivity" />
-        <activity android:name=".MypageActivity" />
-        <activity android:name=".AhaActivity" />
-        <activity android:name=".MemoActivity" />
-        <activity android:name=".MainDeleteActivity" />
-        <activity android:name=".MainModifyActivity" />
+        <activity android:name=".MainActivity" android:theme="@style/FullScreenTheme"/>
+        <activity android:name=".LoginActivity" android:theme="@style/FullScreenTheme" />
+        <activity android:name=".JoinActivity" android:theme="@style/FullScreenTheme"/>
+        <activity android:name=".MemoWriteActivity" android:theme="@style/FullScreenTheme"/>
+        <activity android:name=".MypageActivity" android:theme="@style/FullScreenTheme"/>
+        <activity android:name=".AhaActivity" android:theme="@style/FullScreenTheme"/>
+        <activity android:name=".MemoActivity" android:theme="@style/FullScreenTheme"/>
+        <activity android:name=".MainDeleteActivity" android:theme="@style/FullScreenTheme"/>
+        <activity android:name=".MainModifyActivity" android:theme="@style/FullScreenTheme"/>
     </application>
 
 </manifest>

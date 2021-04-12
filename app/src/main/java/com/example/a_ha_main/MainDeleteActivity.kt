@@ -47,7 +47,7 @@ class MainDeleteActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_delete)
 
-        val mAdapter = MemoAdapter(this, MemoList)
+        val mAdapter = MemoDeleteAdapter(this, MemoList)
         memo_recyclerview.adapter = mAdapter
 
         val lm = LinearLayoutManager(this)
@@ -118,5 +118,4 @@ class MainDeleteActivity : AppCompatActivity() {
         alertDialog.setView(view)
         alertDialog.show()
     }
-    override fun onBackPressed() {}
 }

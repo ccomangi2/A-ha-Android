@@ -5,17 +5,23 @@ import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.Layout
-import android.view.Menu
-import android.view.MenuItem
 import android.view.MotionEvent
 import android.view.View
-import android.widget.LinearLayout
-import android.widget.PopupMenu
 import androidx.annotation.RequiresApi
+import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_main.*
-import java.nio.file.Files.delete
+import kotlinx.android.synthetic.main.activity_main.add_btn
+import kotlinx.android.synthetic.main.activity_main.background_view
+import kotlinx.android.synthetic.main.activity_main.chat_Button
+import kotlinx.android.synthetic.main.activity_main.logout_btn
+import kotlinx.android.synthetic.main.activity_main.memo_btn
+import kotlinx.android.synthetic.main.activity_main.memo_recyclerview
+import kotlinx.android.synthetic.main.activity_main.menu_btn
+import kotlinx.android.synthetic.main.activity_main.menu_view
+import kotlinx.android.synthetic.main.activity_main.mypage_Button
+import kotlinx.android.synthetic.main.activity_main.out_btn
+import kotlinx.android.synthetic.main.activity_main_modify.*
 
 class MainModifyActivity : AppCompatActivity() {
     @SuppressLint("UseCompatLoadingForDrawables", "ClickableViewAccessibility")
@@ -33,7 +39,7 @@ class MainModifyActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_modify)
 
-        val mAdapter = MemoAdapter(this, MemoList)
+        val mAdapter = MemoModifyAdapter(this, MemoList)
         memo_recyclerview.adapter = mAdapter
 
         val lm = LinearLayoutManager(this)
@@ -44,6 +50,12 @@ class MainModifyActivity : AppCompatActivity() {
             if (menu_view.visibility == View.GONE) {
                 menu_view.visibility = View.VISIBLE
             }
+        }
+        memo_recyclerview.apply {
+            val callback = DragManageAdapter(mAdapter, this,
+                    ItemTouchHelper.UP.or(ItemTouchHelper.DOWN).or(ItemTouchHelper.LEFT).or(ItemTouchHelper.RIGHT), -1)
+            val helper = ItemTouchHelper(callback)
+            helper.attachToRecyclerView(memo_recyclerview)
         }
         background_view.setOnTouchListener { _: View, event: MotionEvent ->
             when (event.action) {
@@ -80,6 +92,11 @@ class MainModifyActivity : AppCompatActivity() {
             val nextIntent = Intent(this, MemoWriteActivity::class.java)
             startActivity(nextIntent)
         }
+        ok_btn.setOnClickListener() {
+            val nextIntent = Intent(this, MainActivity::class.java).addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
+            startActivity(nextIntent)
+        }
     }
+
     override fun onBackPressed() {}
 }
