@@ -12,7 +12,7 @@ import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.memo_list.view.*
 
-class MemoAdapter(val context: Context, val memoList: ArrayList<Memo_list>) : RecyclerView.Adapter<MemoAdapter.Holder>() {
+class MemoAdapter(val context: Context?, val memoList: ArrayList<Memo_list>) : RecyclerView.Adapter<MemoAdapter.Holder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
         val view = LayoutInflater.from(context).inflate(R.layout.memo_list, parent, false)
         return Holder(view)
@@ -23,7 +23,9 @@ class MemoAdapter(val context: Context, val memoList: ArrayList<Memo_list>) : Re
     }
 
     override fun onBindViewHolder(holder: Holder, position: Int) {
-        holder?.bind(memoList[position], context)
+        if (context != null) {
+            holder?.bind(memoList[position], context)
+        }
     }
 
     inner class Holder(itemView: View?) : RecyclerView.ViewHolder(itemView!!) {

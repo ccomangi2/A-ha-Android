@@ -5,22 +5,16 @@ import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.Layout
-import android.view.Menu
-import android.view.MenuItem
 import android.view.MotionEvent
 import android.view.View
-import android.widget.LinearLayout
 import android.widget.PopupMenu
 import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_main.*
-import java.nio.file.Files.delete
 
 class MainActivity : AppCompatActivity() {
     @SuppressLint("UseCompatLoadingForDrawables", "ClickableViewAccessibility")
     @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
-
     var MemoList = arrayListOf<Memo_list>(
             Memo_list("제목1", "내용1", "날짜", "icon_memo_text"),
             Memo_list("제목1", "내용1", "날짜", "icon_memo_p"),
@@ -36,7 +30,7 @@ class MainActivity : AppCompatActivity() {
             Memo_list("제목1", "내용1", "날짜", "icon_memo_text"),
             Memo_list("제목1", "내용1", "날짜", "icon_memo_text")
     )
-
+    @SuppressLint("ClickableViewAccessibility")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -86,6 +80,10 @@ class MainActivity : AppCompatActivity() {
         }
         add_btn.setOnClickListener() {
             val nextIntent = Intent(this, MemoWriteActivity::class.java)
+            startActivity(nextIntent)
+        }
+        chat_btn.setOnClickListener() {
+            val nextIntent = Intent(this, AhaActivity::class.java)
             startActivity(nextIntent)
         }
         list_btn.setOnClickListener() {
