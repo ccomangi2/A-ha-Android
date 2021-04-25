@@ -39,8 +39,8 @@
         app:srcCompat="@drawable/button_drawer" />
 
     <ImageButton
-        android:id="@+id/chat_btn"
-        android:layout_width="25dp"
+        android:id="@+id/add_btn"
+        android:layout_width="17dp"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/textView4"
         android:layout_alignParentTop="true"
@@ -50,7 +50,7 @@
         android:adjustViewBounds="true"
         android:background="@android:color/transparent"
         android:scaleType="fitCenter"
-        app:srcCompat="@drawable/chat" />
+        app:srcCompat="@drawable/plus" />
     <ImageButton
         android:id="@+id/list_btn"
         android:layout_width="25dp"
@@ -88,7 +88,7 @@
         tools:listitem="@layout/memo_list"/>
 
     <ImageButton
-        android:id="@+id/add_btn"
+        android:id="@+id/chat_btn"
         android:layout_width="75dp"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
